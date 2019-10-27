@@ -1,0 +1,10 @@
+<ul id="users">
+  <%   @sneakers.each do |sneaker| %>
+    <h3> <%= sneaker.name %> </h3>
+    <p> Hypefactor:  <%= sneaker.hypefactor %> </p>
+    <p> Price:  <%= sneaker.price %> </p>
+    <p> Brand: <%= sneaker.brand %> </p>
+    <p> Condition: <%= sneaker.condition %> </p>
+    <br>
+  <% end %>
+</ul>
