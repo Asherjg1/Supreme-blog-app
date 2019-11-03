@@ -5,5 +5,8 @@
     <p> Brand: <%= @sneaker.brand %> </p>
     <p> Condition: <%= @sneaker.condition %> </p>
     <br>
+    <%= form_tag sneaker_path(@sneaker), method: "delete" do %>
+      <%= submit_tag "Delete #{@sneaker.name}" %>
+    <% end %>
 
 </ul>

@@ -22,11 +22,19 @@ class SneakersController< ApplicationController
   end
 
   def edit
+    sneaker = params["sneaker"]
+    @sneaker = Sneaker.find(params[:id])
   end
 
   def update
+    sneaker = params["sneaker"]
+    @sneaker = Sneaker.find(params[:id])
+    @sneaker.update!(condition: sneaker[:condition], price: sneaker[:price], hypefactor: sneaker[:hypefactor], name: sneaker[:name], brand: sneaker[:brand])
+    redirect_to action: "index"
   end
 
-  def delete
+  def destroy
+    Sneaker.find(params[:id]).destroy
+    redirect_to action: "index"
   end
 end
